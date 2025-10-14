@@ -1,0 +1,161 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import UiKitStructure from './images/ui-kit-structure.png'
+import FigmaStylesPanel from './images/figma-styles-panel.png'
+import FigmaKeyboardComponents from './images/figma-keyboard-components.png'
+import FigmaComponentsPanel from './images/figma-components-panel.png'
+import FigmaHiddenComponents from './images/figma-hidden-components.png'
+import ComponentLibraryPublishing from './images/component-library-publishing.png'
+import DesignToken from './images/design-token.png'
+
+export const article = {
+  author: 'liweinan',
+  date: '2023-09-10',
+  title: '设计规范制作指南',
+  description:
+    '通过制作Design Token，可以帮助我们把设计稿的样式、组件快速传递给研发同事，保证设计产出最大程度让开发还原；同时，设计师可以通过更新Token的方式一键把整个产品对应的样式组件更新，极大缩短设计到开发落地所需的时间。',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+## 组件库搭建的框架
+
+通用组件，指的是在切换不同项目时候都通用的组件；通常指的是系统组件，IOS为例，如状态栏、输入键盘、footer、导航栏、对话框等控件。
+这类控件一般能从原生规范文件中获得，但由于原生规范控件太繁杂且不是都用得上，建议单独做一份文件以便调用。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={UiKitStructure} 
+    alt="UI Kit架构图" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+## 基础样式
+
+基础样式，大致可以分为文字样式、颜色样式、效果样式、删格体系等；
+从复用性角度上讲，建议基础样式中的一部分提练出来成为通用样式，如文字样式（字号+字重）、颜色样式中的中性色（信息层级+背景层级色）、效果样式（投影+圆角）、删格体系（删格+常用间距）等。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={FigmaStylesPanel} 
+    alt="Figma样式面板" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+
+## 基础控件
+
+控件的样式根据项目的不同会有很多差异，所以这里只谈论基础控件，比如标签栏、Toast、对话框、缺省页插画、按钮、Icon等等；建议是把项目中复用率较高的，如一些信息卡片、列表都做成组件
+另外，合理使用「变体」功能，可以最大程度精简组件，让调用更加便捷。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={FigmaKeyboardComponents} 
+    alt="键盘和标题栏组件" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+
+## 强大的「变体」功能
+
+「变体」或称「组件集」功能，能够把一个带有多种状态、或者彼此相似的组件打包成一个组件集；  
+比如日间夜间切换的组件、一个按钮的不同状态和不同尺寸等。
+这样一来在调用组件的时候节省了许多寻找的时间，二来保持了整个组件的界面的整洁，在组件越来越的时候更能体现这个功能的价值。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={FigmaComponentsPanel} 
+    alt="组件库和变体功能" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+
+## 隐藏不必使用的组件
+
+一般而言有两种情况的组件需要做隐藏处理：  
+一是嵌套组件中的一些子组件，如标签栏中的Icon，除了标签栏外没有别的使用场景；  
+二是组件迭代后的旧组件。
+
+处理方法：  
+1、在组件命名前加一个「_」，再更新即可做隐藏；  
+2、右键左侧边栏组件，选择「hide when publishing」即可。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={FigmaHiddenComponents} 
+    alt="隐藏组件功能" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+
+## 发布、调用、更新与停用组件库
+
+组件库发布：
+一个团队内可以看到及使用别的项目已公布的组件库
+发布的组件库将在团队中共享使用「无编辑权」
+
+组件库调用：
+打开组件库开关即可拖拽使用
+
+组件库更新：
+新增组件或未使用组件静默更新
+组件更新会有更新提示
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={ComponentLibraryPublishing} 
+    alt="组件库发布与更新" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
+
+## 设计工程化：Design Token
+
+简而言之，就是把设计稿的样式、组件直接生成代码给研发同事，保证设计产出最大程度让开发还原；
+同时，设计师可以通过更新Token的方式一键把整个产品对应的样式组件更新，极大缩短设计到开发落地所需的时间。
+
+<div className="flex justify-center my-8">
+  <Image 
+    src={DesignToken} 
+    alt="Design Token" 
+    className="max-w-full h-auto rounded-lg shadow-sm" 
+    width={800} 
+    height={500}
+    priority 
+  />
+</div>
+
