@@ -278,7 +278,6 @@ export default async function Home() {
             Hey! 我是李炜楠!  
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            As everyone knows, I&#39;m a keen collector of snow mountains. 
             I love to think, and I&#39;m delighted to see how my thinking can help, change the world, and empower others.
              Every thought is a cause, and every situation is an effect. 
              May we all maintain a state of physical and mental relaxation, a balanced energy, 
@@ -287,7 +286,6 @@ export default async function Home() {
              Staying authentic is the best version of ourselves.
           </p>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            众所周知，我是雪山收集爱好者。
             我喜欢思考，并且乐于通过思考帮助、改变世界，成就他人。    
             每一个想法都是因，而每一种境遇都是果。愿接下来的每一刻，我们都能保持身心放松的状态，  
             睿智有洞察、坚持有积累、独立有想法、学习有创新、虔诚有敬畏。  
