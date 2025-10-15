@@ -124,7 +124,7 @@ function MobileNavigation(
             <MobileNavItem href="/about">关于</MobileNavItem>
             <MobileNavItem href="/articles">思考</MobileNavItem>
             <MobileNavItem href="/projects">项目</MobileNavItem>
-            <MobileNavItem href="/speaking">工具</MobileNavItem>
+            <MobileNavItem href="/speaking">个人</MobileNavItem>
             <MobileNavItem href="/uses">清单</MobileNavItem>
           </ul>
         </nav>
