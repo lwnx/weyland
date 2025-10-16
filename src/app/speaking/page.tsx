@@ -64,7 +64,7 @@ export default function Speaking() {
         </SpeakingSection>
         <SpeakingSection title="Lottie动画编辑工具">
           <Appearance
-            href="http://lwnx.asia/"
+            href="https://lottienew.vercel.app/"
             title="EditLottie - Create and Edit Lottie Animations"
             description="一个在线工具，旨在帮助用户无需代码编辑器即可快速编辑Lottie文件的图层。可视化编辑Lottie动画，自动识别JSON文件，修改完成后可直接下载。"
             event="主要特点：简单编辑器、易于操作、快速导出"
